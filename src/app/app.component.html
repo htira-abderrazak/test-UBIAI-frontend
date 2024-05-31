@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="labels">
+    <div>
+      <p>Labels</p>
+      <ul>
+        <li *ngFor="let label of labels">
+          {{ label }}
+          <button (click)="selectLabel(label)">Select</button>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="selectedLabels.length > 0">
+      <h2>Selected Labels</h2>
+      <ul>
+        <li *ngFor="let label of selectedLabels">
+          {{ label }}
+          <button (click)="deselectLabel(label)">Deselect</button>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <p>Add Label</p>
+      <input type="text" #newLabelInput>
+      <button (click)="addLabel(newLabelInput.value)">Add</button>
+    </div>
+
+    <input type="file" (change)="onFileSelected($event)" accept=".txt" />
+
+  </div>
+  <div class="document">
+    <span *ngIf="fileContent" (mouseup)="onTextSelect($event)" >
+      {{ fileContent }}
+    </span>
+  </div>
+
+  <button *ngIf="selectedText" (click)="annotate()" >annotate selected text</button>
+</div>
+
+

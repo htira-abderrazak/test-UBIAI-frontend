@@ -1,0 +1,94 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+
+.document {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-top: 20px;
+}
+
+.document span {
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.document .annotated.SKILLS {
+  background-color: purple;
+  color: white;
+  border-radius: 3px;
+}
+
+.document .annotated.EXPERIENCE {
+  background-color: blue;
+  color: white;
+  border-radius: 3px;
+}
+
+.document .annotated.DIPLOMA {
+  background-color: green;
+  color: white;
+  border-radius: 3px;
+}
+
+.document .annotated.DIPLOMA_MAJOR {
+  background-color: red;
+  color: white;
+  border-radius: 3px;
+}
+
+/* General styles */
+div {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+p {
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41; /* Darker green */
+}
+
+/* Styles for "Selected Labels" section */
+.selected-labels {
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+h2 {
+  margin-bottom: 5px;
+}
