@@ -11,8 +11,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
-  constructor(private service :ServiceService){}
+  constructor(private service: ServiceService) {}
   selectedText: any;
 
   selectedFile: any;
@@ -33,10 +32,10 @@ export class AppComponent {
   }
 
   deselectLabel(label: string) {
-    this.selectedLabels = this.selectedLabels.filter(l => l.trim() !== label.trim());
-    
-}
-
+    this.selectedLabels = this.selectedLabels.filter(
+      (l) => l.trim() !== label.trim()
+    );
+  }
 
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
@@ -58,7 +57,6 @@ export class AppComponent {
     };
   }
 
-
   @HostListener('document:selectionchange', ['$event'])
   onTextSelect(event: MouseEvent): void {
     const selectedText = window.getSelection()?.toString();
@@ -67,9 +65,9 @@ export class AppComponent {
   }
 
   annotate() {
-    this.service.annotate(this.selectedText, this.labels).subscribe(
+    this.service.annotate(this.selectedText, this.selectedLabels).subscribe(
       (response) => {
-        this.service.exportAsJSON(response, 'response.json')
+        this.service.exportAsJSON(response, 'response.json');
       },
       (error) => {
         console.error('Error:', error);
